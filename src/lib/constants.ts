@@ -3,9 +3,9 @@ export const SITE_NAME = "KRI Tech & Services";
 export const COMPANY = {
   name: "KRI Tech & Services",
   tagline: "Empowering Businesses, Enabling Futures",
-  email: "abc.xyz@gmail.com",
-  phone: "+91 9876543210",
-  phoneHref: "+919876543210",
+  email: "balasameerkrishna.allamsetti@gmail.com",
+  phone: "+91 70135 43791",
+  phoneHref: "+91 70135 43791",
 };
 
 export const NAV_LINKS = [
