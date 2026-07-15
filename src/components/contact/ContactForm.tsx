@@ -42,23 +42,19 @@ export default function ContactForm() {
 
     try {
       // ---------------------------------------------------------------
-      // BACKEND INTEGRATION POINT
+      // Live submission via our own API route (src/app/api/contact/route.ts),
+      // which sends the email through Resend. The Resend API key stays on
+      // the server — see .env.local.example for setup steps.
       // ---------------------------------------------------------------
-      // This is currently a frontend-only simulation. To send real
-      // submissions, replace the block below with a call to your chosen
-      // integration, for example:
-      //
-      //   const response = await fetch("/api/contact", {
-      //     method: "POST",
-      //     headers: { "Content-Type": "application/json" },
-      //     body: JSON.stringify(formData),
-      //   });
-      //   if (!response.ok) throw new Error("Failed to send message");
-      //
-      // See .env.local.example for backend/email service options
-      // (Resend, EmailJS, Formspree, or a custom API route).
-      // ---------------------------------------------------------------
-      await new Promise((resolve) => setTimeout(resolve, 900));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
 
       setStatus("success");
       setFormData(INITIAL_FORM);
