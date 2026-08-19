@@ -109,9 +109,14 @@ export default function PrivacyPolicyPage() {
                   {COMPANY.email}
                 </a>{" "}
                 or{" "}
-                <a href={`tel:${COMPANY.phoneHref}`} className="text-brand hover:underline">
-                  {COMPANY.phone}
-                </a>
+                {COMPANY.phones.map((phone, index) => (
+                  <span key={phone.href}>
+                    <a href={`tel:${phone.href}`} className="text-brand hover:underline">
+                      {phone.display}
+                    </a>
+                    {index < COMPANY.phones.length - 1 ? " / " : ""}
+                  </span>
+                ))}
                 .
               </p>
             </div>

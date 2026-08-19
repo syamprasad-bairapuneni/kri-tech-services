@@ -53,9 +53,15 @@ export default function ContactPage() {
                 </span>
                 <div>
                   <p className="font-medium text-navy-900 dark:text-white">Phone</p>
-                  <a href={`tel:${COMPANY.phoneHref}`} className="text-ink-light hover:text-brand dark:text-sky-100/70">
-                    {COMPANY.phone}
-                  </a>
+                  {COMPANY.phones.map((phone) => (
+                    <a
+                      key={phone.href}
+                      href={`tel:${phone.href}`}
+                      className="block text-ink-light hover:text-brand dark:text-sky-100/70"
+                    >
+                      {phone.display}
+                    </a>
+                  ))}
                 </div>
               </li>
             </ul>

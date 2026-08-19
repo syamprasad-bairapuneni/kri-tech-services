@@ -59,11 +59,13 @@ export default function Footer() {
                 {COMPANY.email}
               </a>
             </li>
-            <li>
-              <a href={`tel:${COMPANY.phoneHref}`} className="hover:text-white">
-                {COMPANY.phone}
-              </a>
-            </li>
+            {COMPANY.phones.map((phone) => (
+              <li key={phone.href}>
+                <a href={`tel:${phone.href}`} className="hover:text-white">
+                  {phone.display}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </Container>
