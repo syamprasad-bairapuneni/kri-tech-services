@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTABand from "@/components/home/CTABand";
+import { TEAM } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -58,6 +60,65 @@ export default function AboutPage() {
               same: show up reliably, communicate honestly, and do the work
               well.
             </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-padding bg-sky-50 dark:bg-navy-900">
+        <Container>
+          <SectionHeading eyebrow="Our Team" title="Founders" align="left" />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {TEAM.map((member) => (
+              <div
+                key={member.name}
+                className="rounded-2xl border border-navy-900/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-navy-950"
+              >
+                {/* Photo if provided, otherwise initials placeholder */}
+                {member.photo ? (
+                  <div className="relative h-16 w-16 overflow-hidden rounded-full">
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className="flex h-16 w-16 items-center justify-center rounded-full bg-brand/10 text-lg font-bold text-brand dark:bg-teal-light/10 dark:text-teal-light"
+                    aria-hidden="true"
+                  >
+                    {member.name
+                      .split(" ")
+                      .map((part) => part[0])
+                      .slice(0, 2)
+                      .join("")}
+                  </div>
+                )}
+                <h3 className="mt-4 text-lg font-bold text-navy-900 dark:text-white">
+                  {member.name}
+                </h3>
+                <p className="text-sm font-semibold text-brand dark:text-teal-light">
+                  {member.role}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-light dark:text-sky-100/70">
+                  {member.bio}
+                </p>
+                {member.credentials && member.credentials.length > 0 && (
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {member.credentials.map((credential) => (
+                      <li
+                        key={credential}
+                        className="rounded-full bg-sky-50 px-3 py-1 text-xs font-medium text-ink dark:bg-navy-900 dark:text-sky-100/80"
+                      >
+                        {credential}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
           </div>
         </Container>
       </section>

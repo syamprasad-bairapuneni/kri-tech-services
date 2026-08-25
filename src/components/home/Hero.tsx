@@ -47,6 +47,24 @@ export default function Hero() {
           <NetworkGraphic className="w-full h-auto" />
         </div>
       </Container>
+
+      {/* Internship Program banner */}
+      <div className="relative border-t border-white/10 bg-white/5">
+        <Container className="flex flex-col items-center gap-4 py-8 text-center md:flex-row md:justify-between md:text-left">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-teal-light">
+              From Classroom to Industry
+            </p>
+            <p className="mt-1 text-lg font-semibold text-white">
+              A 6-Month Internship Program combining CCNA-aligned Networking,
+              Cybersecurity Fundamentals, and Hands-On Practical Training.
+            </p>
+          </div>
+          <ButtonLink href="/internship-program" variant="ghost" className="flex-shrink-0">
+            Explore the Program
+          </ButtonLink>
+        </Container>
+      </div>
     </section>
   );
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import { COMPANY, NAV_LINKS } from "@/lib/constants";
+import { COMPANY, NAV_LINKS, SHOW_LEGAL_INFO, LEGAL_INFO } from "@/lib/constants";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -69,6 +69,16 @@ export default function Footer() {
           </ul>
         </div>
       </Container>
+
+      {SHOW_LEGAL_INFO && (
+        <div className="border-t border-white/10 py-4">
+          <Container className="flex flex-col gap-1 text-xs text-sky-100/60 md:flex-row md:gap-6">
+            {LEGAL_INFO.udyamNumber && <span>Udyam Reg. No: {LEGAL_INFO.udyamNumber}</span>}
+            {LEGAL_INFO.gstNumber && <span>GSTIN: {LEGAL_INFO.gstNumber}</span>}
+            {LEGAL_INFO.registeredAddress && <span>{LEGAL_INFO.registeredAddress}</span>}
+          </Container>
+        </div>
+      )}
 
       <div className="border-t border-white/10 py-6">
         <Container className="flex flex-col-reverse items-center gap-2 text-xs text-sky-100/60 md:flex-row md:justify-between">

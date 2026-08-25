@@ -13,10 +13,85 @@ export const COMPANY = {
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Internships", href: "/internship-program" },
   { label: "About Us", href: "/about" },
   { label: "Why Choose Us", href: "/why-choose-us" },
   { label: "Contact Us", href: "/contact" },
 ];
+
+// Legal / registration details — placeholder until Udyam & GST are confirmed and issued.
+// Fill these in once the actual numbers are in hand, then set SHOW_LEGAL_INFO to true.
+export const SHOW_LEGAL_INFO = false;
+export const LEGAL_INFO = {
+  udyamNumber: "",
+  gstNumber: "",
+  registeredAddress: "",
+};
+
+export type TeamMember = {
+  name: string;
+  role: string;
+  bio: string;
+  credentials?: string[];
+  photo?: string; // path under /public, e.g. "/team/krishna.jpg"
+};
+
+export const TEAM: TeamMember[] = [
+  {
+    name: "Krishna Allamsetti",
+    role: "CEO & Founder",
+    bio: "Network Security Engineer with hands-on experience securing and monitoring enterprise networks, leading KRI's technical direction and the Internship Program's networking and cybersecurity curriculum.",
+    credentials: ["CCNA Certified", "PCNSE Certified", "SolarWinds Certified Professional"],
+    photo: "/team/krishna-allamsetti.png",
+  },
+  {
+    name: "Syam Prasad",
+    role: "Chief Operations Officer (COO)",
+    bio: "Leads day-to-day operations at KRI Tech & Services, including internship program delivery, college partnerships, and student/intern coordination from onboarding through completion.",
+    photo: "/team/syam-prasad.png",
+  },
+];
+
+export type InternshipTrack = {
+  title: string;
+  description: string;
+};
+
+export const INTERNSHIP_PROGRAM = {
+  headline: "From Classroom to Industry",
+  subheadline:
+    "A 6-Month Internship Program combining CCNA-aligned Networking, Cybersecurity Fundamentals, and Hands-On Practical Training.",
+  duration: "6 Months",
+  targetAudience:
+    "Diploma students (CSE, ECE, EE) and B.Tech students seeking a mandatory or career-focused industry internship.",
+  tracks: [
+    {
+      title: "CCNA-Aligned Networking Fundamentals",
+      description:
+        "Core networking concepts aligned with the CCNA curriculum — routing, switching, and network fundamentals taught by a CCNA-certified engineer.",
+    },
+    {
+      title: "Cybersecurity Fundamentals",
+      description:
+        "Foundational cybersecurity concepts and practices, grounded in real enterprise security experience.",
+    },
+    {
+      title: "Practical Projects",
+      description:
+        "Hands-on projects that apply networking and security concepts to real-world scenarios.",
+    },
+    {
+      title: "Remote IT/NOC Operations Exposure",
+      description:
+        "Direct exposure to how remote IT support and Network Operations Center (NOC) work is actually done.",
+    },
+  ] as InternshipTrack[],
+  outcomes: [
+    "6-month program completion certificate",
+    "Practical, project-based experience for your resume",
+    "Possibility of a full-time remote opportunity with KRI Tech & Services after successful completion",
+  ],
+};
 
 export type ServiceItem = {
   slug: string;

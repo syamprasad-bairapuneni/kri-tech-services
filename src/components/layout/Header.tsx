@@ -36,7 +36,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav aria-label="Primary" className="hidden md:flex items-center gap-8">
+        <nav aria-label="Primary" className="hidden lg:flex items-center gap-5 xl:gap-7">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -44,7 +44,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-sm font-medium transition-colors hover:text-brand ${
+                className={`whitespace-nowrap text-sm font-medium transition-colors hover:text-brand ${
                   isActive ? "text-brand" : "text-ink dark:text-sky-100/80"
                 }`}
               >
@@ -54,15 +54,15 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <ThemeToggle />
-          <ButtonLink href="/contact" className="!py-2.5 !px-5 text-sm">
+          <ButtonLink href="/contact" className="!py-2.5 !px-5 text-sm whitespace-nowrap">
             Book a Consultation
           </ButtonLink>
         </div>
 
         {/* Mobile: theme toggle + menu button */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <button
             type="button"
@@ -90,7 +90,7 @@ export default function Header() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
-          className="md:hidden border-t border-navy-900/10 bg-white dark:border-white/10 dark:bg-navy-950"
+          className="lg:hidden border-t border-navy-900/10 bg-white dark:border-white/10 dark:bg-navy-950"
         >
           <Container className="flex flex-col gap-1 py-4">
             {NAV_LINKS.map((link) => (
