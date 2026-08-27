@@ -19,13 +19,12 @@ export const NAV_LINKS = [
   { label: "Contact Us", href: "/contact" },
 ];
 
-// Legal / registration details — placeholder until Udyam & GST are confirmed and issued.
-// Fill these in once the actual numbers are in hand, then set SHOW_LEGAL_INFO to true.
-export const SHOW_LEGAL_INFO = false;
+// Legal / registration details — Udyam confirmed; GST still pending.
+export const SHOW_LEGAL_INFO = true;
 export const LEGAL_INFO = {
-  udyamNumber: "",
+  udyamNumber: "UDYAM-TS-09-0268756",
   gstNumber: "",
-  registeredAddress: "",
+  registeredAddress: "Gollapalli, Shamshabad, Ranga Reddy, Telangana – 501218",
 };
 
 export type TeamMember = {
@@ -105,7 +104,7 @@ export const SERVICES: ServiceItem[] = [
     slug: "technical-support",
     title: "Technical Support",
     summary:
-      "Fast, dependable remote IT support that keeps your systems running and your team unblocked — without the overhead of an in-house help desk.",
+      "Fast, dependable remote IT support that keeps your systems running and your team unblocked  without the overhead of an in-house help desk.",
     points: [
       "Remote troubleshooting for hardware and software issues",
       "Structured ticket management from first report to resolution",
@@ -157,6 +156,6 @@ export const WHY_CHOOSE_US = [
   {
     title: "Customer Focused",
     description:
-      "Every engagement is built around your outcomes — clear communication, measurable service, and support that adapts to how you work.",
+      "Every engagement is built around your outcomes  clear communication, measurable service, and support that adapts to how you work.",
   },
 ];

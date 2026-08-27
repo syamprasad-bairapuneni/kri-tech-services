@@ -75,7 +75,7 @@ export default function Footer() {
           <Container className="flex flex-col gap-1 text-xs text-sky-100/60 md:flex-row md:gap-6">
             {LEGAL_INFO.udyamNumber && <span>Udyam Reg. No: {LEGAL_INFO.udyamNumber}</span>}
             {LEGAL_INFO.gstNumber && <span>GSTIN: {LEGAL_INFO.gstNumber}</span>}
-            {LEGAL_INFO.registeredAddress && <span>{LEGAL_INFO.registeredAddress}</span>}
+            
           </Container>
         </div>
       )}
